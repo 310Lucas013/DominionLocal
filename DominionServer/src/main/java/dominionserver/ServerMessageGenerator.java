@@ -3,8 +3,6 @@ package dominionserver;
 import dominionshared.communication.messages.*;
 import dominionshared.communication.websockets.IServerMessageGenerator;
 
-import java.util.List;
-
 public class ServerMessageGenerator implements IServerMessageGenerator {
 
     private IServerWebSocket serverSocket;
@@ -28,13 +26,13 @@ public class ServerMessageGenerator implements IServerMessageGenerator {
         serverSocket.sendTo(sessionId, new PlayerReadyMessage(playerNr));
     }
 
-//    @Override
-//    public void notifyBothReady(String sessionId, String playerOneName, String playerTwoName) {
-//        serverSocket.sendTo(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
-//    }
-//
-//    @Override
-//    public void notifyBothReadyOpponent(String sessionId, String playerOneName, String playerTwoName) {
-//        serverSocket.sendToOthers(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
-//    }
+    @Override
+    public void notifyBothReady(String sessionId, String playerOneName, String playerTwoName) {
+        serverSocket.sendTo(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
+    }
+
+    @Override
+    public void notifyBothReadyOpponent(String sessionId, String playerOneName, String playerTwoName) {
+        serverSocket.sendToOthers(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
+    }
 }

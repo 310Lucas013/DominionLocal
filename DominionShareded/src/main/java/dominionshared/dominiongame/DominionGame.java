@@ -16,6 +16,9 @@ public class DominionGame implements IDominionGame {
     private IServerMessageGenerator messageGenerator;
     private boolean continueRegister;
 
+    public DominionGame() {
+    }
+
     public DominionGame(IServerMessageGenerator messageGenerator) {
         this.messageGenerator = messageGenerator;
     }

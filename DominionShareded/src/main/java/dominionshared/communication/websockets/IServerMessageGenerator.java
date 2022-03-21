@@ -8,7 +8,7 @@ public interface IServerMessageGenerator {
 
     void notifyPlayerReady(String sessionId, int playerNr);
 
-//    void notifyBothReady(String sessionId, String playerOneName, String playerTwoName);
-//
-//    void notifyBothReadyOpponent(String sessionId, String playerOneName, String playerTwoName);
+    void notifyBothReady(String sessionId, String playerOneName, String playerTwoName);
+
+    void notifyBothReadyOpponent(String sessionId, String playerOneName, String playerTwoName);
 }
