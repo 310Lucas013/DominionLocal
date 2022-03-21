@@ -1,23 +1,23 @@
 package dominionserver;
 
-import seabattleshared.communication.messaging.IMessageHandler;
-import seabattleshared.communication.messaging.IMessageHandlerFactory;
-import seabattleshared.communication.messaging.MessageProcessorBase;
-import seabattleshared.seabattlegame.ISeaBattleGame;
+import dominionshared.communication.messaging.IMessageHandler;
+import dominionshared.communication.messaging.IMessageHandlerFactory;
+import dominionshared.communication.messaging.MessageProcessorBase;
+import dominionshared.dominiongame.IDominionGame;
 
 public class ServerMessageProcessor extends MessageProcessorBase implements IServerMessageProcessor {
 
-    private ISeaBattleGame game;
+    private IDominionGame game;
 
     public ServerMessageProcessor(IMessageHandlerFactory messageHandlerFactory) {
         super(messageHandlerFactory);
     }
 
-    public void registerGame(ISeaBattleGame game) {
+    public void registerGame(IDominionGame game) {
         this.game = game;
     }
 
-    public ISeaBattleGame getGame() {
+    public IDominionGame getGame() {
         return game;
     }
 

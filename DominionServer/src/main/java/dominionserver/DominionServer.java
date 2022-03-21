@@ -1,16 +1,16 @@
 package dominionserver;
 
 import dominionserver.messageHandlers.ServerMessageHandlerFactory;
+import dominionshared.dominiongame.DominionGame;
+import dominionshared.dominiongame.IDominionGame;
+import dominionshared.logging.Logger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.websocket.jsr356.server.ServerContainer;
 import org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer;
-import seabattleshared.communication.messaging.IMessageHandlerFactory;
-import seabattleshared.communication.websockets.IServerMessageGenerator;
-import seabattleshared.logging.Logger;
-import seabattleshared.seabattlegame.ISeaBattleGame;
-import seabattleshared.seabattlegame.SeaBattleGame;
+import dominionshared.communication.messaging.IMessageHandlerFactory;
+import dominionshared.communication.websockets.IServerMessageGenerator;
 
 import javax.websocket.server.ServerEndpoint;
 import javax.websocket.server.ServerEndpointConfig;
@@ -30,7 +30,7 @@ public class DominionServer {
         final ServerWebSocket socket = new ServerWebSocket();
         socket.setMessageProcessor(messageProcessor);
         IServerMessageGenerator messageGenerator = new ServerMessageGenerator(socket);
-        ISeaBattleGame game = new SeaBattleGame(messageGenerator);
+        IDominionGame game = new DominionGame(messageGenerator);
         messageProcessor.registerGame(game);
         Server webSocketServer = new Server();
         ServerConnector connector = new ServerConnector(webSocketServer);

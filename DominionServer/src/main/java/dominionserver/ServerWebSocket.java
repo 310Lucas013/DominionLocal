@@ -1,10 +1,10 @@
 package dominionserver;
 
-import seabattleshared.communication.messaging.EncapsulatingMessage;
-import seabattleshared.communication.messaging.IMessageProcessor;
-import seabattleshared.communication.websockets.WebSocketBase;
-import seabattleshared.logging.LogLevel;
-import seabattleshared.logging.Logger;
+import dominionshared.communication.messaging.EncapsulatingMessage;
+import dominionshared.communication.messaging.IMessageProcessor;
+import dominionshared.communication.websockets.WebSocketBase;
+import dominionshared.logging.LogLevel;
+import dominionshared.logging.Logger;
 
 import javax.inject.Singleton;
 import javax.websocket.*;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @Singleton
-@ServerEndpoint(value="/seabattlegame/")
+@ServerEndpoint(value="/dominiongame/")
 public class ServerWebSocket extends WebSocketBase implements IServerWebSocket {
 
     private IMessageProcessor messageProcessor;

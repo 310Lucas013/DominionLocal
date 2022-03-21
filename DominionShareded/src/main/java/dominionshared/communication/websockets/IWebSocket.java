@@ -1,6 +1,6 @@
 package dominionshared.communication.websockets;
 
-import seabattleshared.communication.messaging.IMessageProcessor;
+import dominionshared.communication.messaging.IMessageProcessor;
 
 public interface IWebSocket {
     void start();

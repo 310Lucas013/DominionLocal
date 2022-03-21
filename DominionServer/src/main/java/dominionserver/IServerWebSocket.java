@@ -1,6 +1,6 @@
 package dominionserver;
 
-import seabattleshared.communication.websockets.IWebSocket;
+import dominionshared.communication.websockets.IWebSocket;
 
 public interface IServerWebSocket extends IWebSocket {
 

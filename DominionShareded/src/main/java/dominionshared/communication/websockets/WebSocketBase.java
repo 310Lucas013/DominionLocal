@@ -1,9 +1,9 @@
 package dominionshared.communication.websockets;
 
-import seabattleshared.communication.messaging.EncapsulatingMessageGenerator;
-import seabattleshared.communication.messaging.IEncapsulatingMessageGenerator;
-import seabattleshared.serialization.ISerializer;
-import seabattleshared.serialization.SerializationProvider;
+import dominionshared.communication.messaging.EncapsulatingMessageGenerator;
+import dominionshared.communication.messaging.IEncapsulatingMessageGenerator;
+import dominionshared.serialization.ISerializer;
+import dominionshared.serialization.SerializationProvider;
 
 public abstract class WebSocketBase {
 

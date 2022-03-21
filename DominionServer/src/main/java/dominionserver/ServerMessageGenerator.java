@@ -1,9 +1,7 @@
 package dominionserver;
 
-import seabattleshared.communication.messages.*;
-import seabattleshared.communication.websockets.IServerMessageGenerator;
-import seabattleshared.models.Ship;
-import seabattleshared.models.ShotType;
+import dominionshared.communication.messages.*;
+import dominionshared.communication.websockets.IServerMessageGenerator;
 
 import java.util.List;
 
@@ -30,28 +28,13 @@ public class ServerMessageGenerator implements IServerMessageGenerator {
         serverSocket.sendTo(sessionId, new PlayerReadyMessage(playerNr));
     }
 
-    @Override
-    public void notifyShipsChanged(String sessionId, int playerNr, List<Ship> ships) {
-        serverSocket.sendTo(sessionId, new ChangedShipsMessage(playerNr, ships));
-    }
-
-    @Override
-    public void notifyPlayerFireShot(String sessionId, int playerNr, int posX, int posY, ShotType shotResult, List<Ship> ships) {
-        serverSocket.sendTo(sessionId, new PlayerShotMessage(playerNr, posX, posY, shotResult, ships));
-    }
-
-    @Override
-    public void notifyOpponentFireShot(String sessionId, int playerNr, int posX, int posY, ShotType shotResult, List<Ship> ships) {
-        serverSocket.sendToOthers(sessionId, new OpponentShotMessage(playerNr, posX, posY, shotResult, ships));
-    }
-
-    @Override
-    public void notifyBothReady(String sessionId, String playerOneName, String playerTwoName) {
-        serverSocket.sendTo(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
-    }
-
-    @Override
-    public void notifyBothReadyOpponent(String sessionId, String playerOneName, String playerTwoName) {
-        serverSocket.sendToOthers(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
-    }
+//    @Override
+//    public void notifyBothReady(String sessionId, String playerOneName, String playerTwoName) {
+//        serverSocket.sendTo(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
+//    }
+//
+//    @Override
+//    public void notifyBothReadyOpponent(String sessionId, String playerOneName, String playerTwoName) {
+//        serverSocket.sendToOthers(sessionId, new BothReadyMessage(playerOneName, playerTwoName));
+//    }
 }

@@ -71,5 +71,45 @@ public class Player implements Serializable {
     public void setReady(boolean ready) {
         this.ready = ready;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public List<Card> getAllCards() {
+        return allCards;
+    }
+
+    public void setAllCards(List<Card> allCards) {
+        this.allCards = allCards;
+    }
+
+    public List<Card> getStockCards() {
+        return stockCards;
+    }
+
+    public void setStockCards(List<Card> stockCards) {
+        this.stockCards = stockCards;
+    }
+
+    public List<Card> getHandCards() {
+        return handCards;
+    }
+
+    public void setHandCards(List<Card> handCards) {
+        this.handCards = handCards;
+    }
+
+    public List<Card> getUsedCards() {
+        return usedCards;
+    }
+
+    public void setUsedCards(List<Card> usedCards) {
+        this.usedCards = usedCards;
+    }
 }
 
