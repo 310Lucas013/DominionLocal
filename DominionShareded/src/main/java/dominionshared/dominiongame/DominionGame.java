@@ -64,7 +64,7 @@ public class DominionGame implements IDominionGame {
     }
 
     @Override
-    public void registerPlayer(String name, String password, IDominionGUI application, boolean singlePlayerMode) {
+    public void registerPlayer(String name, IDominionGUI application, boolean singlePlayerMode) {
 
     }
 

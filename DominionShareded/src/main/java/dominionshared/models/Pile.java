@@ -24,4 +24,9 @@ public class Pile {
     public void setAmountLeft(int amountLeft) {
         this.amountLeft = amountLeft;
     }
+
+    @Override
+    public String toString() {
+        return getAmountLeft() + "x " + card.toString() + " left";
+    }
 }

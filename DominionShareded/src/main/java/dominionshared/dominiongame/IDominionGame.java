@@ -36,7 +36,7 @@ public interface IDominionGame {
      * number of players exceeds two in multi-player mode or
      * name is already registered.
      */
-    public void registerPlayer(String name, String password, IDominionGUI application, boolean singlePlayerMode);
+    public void registerPlayer(String name, IDominionGUI application, boolean singlePlayerMode);
 
     /**
      * Notify that the player is ready to play the game, i.e., all ships have
